@@ -24,12 +24,12 @@ seqComando: comando (';' comando)* ;
 comando: ID ':=' expressao                          # atribuicao
        | ID '=' expressao                           # atribuicao
        | 'skip'                                     # skip
-       | 'se' bool 'entao' comando ('senaose' bool 'entao' comando)*? ('senao' comando)  # se
+       | 'se' bool 'entao' comando ('senaose' bool 'entao' comando)*? ('senao' comando)?  # se
        | 'enquanto' bool 'faca' comando             # enquanto
        | 'exiba' Texto                              # exiba
        | 'escreva' expressao                        # escreva
        | 'para' ID 'de' expressao 'ate' expressao 'passo' INT 'faca' comando # laco
-       | 'escolha' ID ('caso' expressao ':' comando)+'outro : ' comando # escolha
+       | 'escolha' ID ('caso' expressao ':' seqComando)* 'outro' ':' seqComando # escolha
        | '{' seqComando '}'                         # bloco
        | execFuncao                                 # funcao
        ;
@@ -48,6 +48,8 @@ expressao: INT                                      # inteiro
 
 bool: ('verdadeiro'|'falso')                        # booleano
     | expressao '=' expressao                       # opRel
+    | expressao '<' expressao                      # opRel
+    | expressao '>' expressao                      # opRel
     | expressao '<=' expressao                      # opRel
     | expressao '>=' expressao                      # opRel
     | expressao '<>' expressao                      # opRel
