@@ -10,7 +10,8 @@ comando: ID ':=' expressao                          # atribuicao
        | 'enquanto' bool 'faca' comando             # enquanto
        | 'exiba' Texto                              # exiba
        | 'escreva' expressao                        # escreva
-       | 'para' ID 'de' expressao 'ate' expressao 'passo' INT 'faca' comando #laco
+       | 'para' ID 'de' expressao 'ate' expressao 'passo' INT 'faca' comando # laco
+       | 'escolha' ID ('caso' expressao ':' comando)+'outro : ' comando # escolha
        | '{' seqComando '}'                         # bloco
        ;
 
