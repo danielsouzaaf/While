@@ -43,23 +43,27 @@ public class MeuListener extends EnquantoBaseListener {
 
 	@Override
 	public void exitSe(final EnquantoParser.SeContext ctx) {
-		final Bool condicao = (Bool) getValue((ParseTree) ctx.bool());
+		final Bool condicaoSe = (Bool) getValue(ctx.bool(0));
 		final Comando entao = (Comando) getValue(ctx.comando(0));
-		final Comando senao = (Comando) getValue(ctx.comando(1));
 
-		final List<SenaoSe> listaSenaoSe = new ArrayList<SenaoSe>();
-
-
-		if (ctx.bool().size() > 1)
-			for (int i = 1; i < ctx.bool().size(); i++)
-			{
-				final Bool _condicao = (Bool) getValue(ctx.bool(i));
-				final Comando _entao = (Comando) getValue(ctx.comando(i));
-
-				listaSenaoSe.add(new SenaoSe(_condicao, _entao));
+		List<Bool> condicaoSenaoSe = new ArrayList<>();
+		List<Comando> comandoSenaoSe = new ArrayList<>();
+		Comando comandoSenao = null;
+		// thanks to duarte, mesmo no canadá continua me ajudando.
+		// https://github.com/duartefq/While/blob/d6ac595bfb38eb39d7a6a7f0a8cd2a24e2d92064/src/plp/enquanto/parser/MeuListener.java#L40
+		if (ctx.bool().size() > 1) { // we have two conditions, ie, se and senaose
+			for (int i = 1; i < ctx.bool().size(); i++) {
+				condicaoSenaoSe.add((Bool) getValue(ctx.bool(i)));
+				comandoSenaoSe.add((Comando) getValue(ctx.comando(i)));
 			}
+		}
 
-		setValue(ctx, new Se(condicao, entao, listaSenaoSe, senao));
+		if (ctx.comando().size() > ctx.bool().size()) { // we have a senao clause
+			comandoSenao = (Comando) getValue(ctx.comando(ctx.comando().size() - 1));
+		}
+
+		setValue(ctx, new Se(condicaoSe, entao, comandoSenao,
+				condicaoSenaoSe, comandoSenaoSe));
 	}
 
 	@Override

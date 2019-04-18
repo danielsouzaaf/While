@@ -43,56 +43,44 @@ public interface Linguagem {
 		}
 	}
 
-	class Se extends SenaoSe implements Comando {
-		private Bool condicao;
-		private Comando senao;
-		private List<SenaoSe> listaSenaoSe;
+	class Se implements Comando {
+		private Bool condicaoSe;
+		private Comando comandoEntao;
+		private Comando comandoSenao;
+		private List<Bool> condicaoSenaoSe;
+		private List<Comando> comandoSenaoSe;
 
-		public Se(Bool condicao, Comando entao, List<SenaoSe> listaSenaoSe,Comando senao) {
-			super(condicao, entao);
-
-			this.listaSenaoSe = listaSenaoSe;
-			this.senao = senao;
+		public Se(Bool condicaoSe, Comando comandoEntao, Comando comandoSenao,
+				  List<Bool> condicaoSenaoSe, List<Comando> comandoSenaoSe) {
+			this.condicaoSe = condicaoSe;
+			this.comandoEntao = comandoEntao;
+			this.comandoSenao = comandoSenao;
+			this.condicaoSenaoSe = condicaoSenaoSe;
+			this.comandoSenaoSe = comandoSenaoSe;
 		}
 
 		@Override
 		public void execute() {
-			boolean executaSenao = true;
+			boolean goSenao = true;
 
-			if (condicao.getValor()) {
-				executaSenao = false;
-
-				super.execute();
-			} else {
-				for (SenaoSe senaoSe : listaSenaoSe) {
-					if (senaoSe.condicao.getValor()) {
-						executaSenao = false;
-
-						senaoSe.execute();
+			if (condicaoSe.getValor()) {
+				comandoEntao.execute();
+				goSenao = false;
+			} else if (!condicaoSenaoSe.isEmpty()) {
+				for (int i = 0; i < condicaoSenaoSe.size(); i++) {
+					if (condicaoSenaoSe.get(i).getValor()) {
+						comandoSenaoSe.get(i).execute();
+						goSenao = false;
 						break;
 					}
 				}
 			}
-
-			if (executaSenao) {
-				senao.execute();
+			if (goSenao && comandoSenao != null) {
+				comandoSenao.execute();
 			}
-		}
-	}
 
-	class SenaoSe implements Comando {
-		private Bool condicao;
-		private Comando entao;
-
-		public SenaoSe(Bool condicao, Comando entao) {
-			this.condicao = condicao;
-			this.entao = entao;
 		}
 
-		@Override
-		public void execute() {
-			entao.execute();
-		}
 	}
 
 	Skip skip = new Skip();

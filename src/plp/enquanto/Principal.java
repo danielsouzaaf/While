@@ -16,6 +16,7 @@ import plp.enquanto.parser.MeuListener;
 public class Principal {
 
 	private static ParseTree parse(String arq) {
+		System.out.println(arq);
 		CharStream input;
 		try {
 			input = CharStreams.fromFileName(arq);
