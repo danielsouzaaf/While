@@ -231,4 +231,20 @@ public class MeuListener extends EnquantoBaseListener {
 		final Bool dir = (Bool) getValue(ctx.bool(1));
 		setValue(ctx, new XorLogico(esq, dir));
 	}
+
+	@Override
+	public void exitEscolha(EnquantoParser.EscolhaContext ctx) {
+		final String id = ctx.ID().getText();
+		List<Expressao> casos = new ArrayList<Expressao>();
+		List<List<Comando>> listaComandos = new ArrayList<List<Comando>>();
+
+		for	(EnquantoParser.ExpressaoContext exctx : ctx.expressao()) {
+			casos.add((Expressao) getValue(exctx));
+		}
+
+		for	(EnquantoParser.SeqComandoContext comctx : ctx.seqComando()) {
+			listaComandos.add((List<Comando>) getValue(comctx));
+		}
+		setValue(ctx, new Escolha(id, casos, listaComandos));
+	}
 }

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77007aae-eaad-4618-88b2-f0e14571be44" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/plp/enquanto/linguagem/Linguagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plp/enquanto/linguagem/Linguagem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/plp/enquanto/parser/MeuListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plp/enquanto/parser/MeuListener.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -51,10 +50,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/plp/enquanto/parser/MeuListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="201" column="18" lean-forward="true" selection-start-line="201" selection-start-column="18" selection-end-line="201" selection-end-column="18" />
+            <state relative-caret-position="322">
+              <caret line="247" column="61" selection-start-line="247" selection-start-column="61" selection-end-line="247" selection-end-column="61" />
               <folding>
                 <element signature="e#1255#1264#0" expanded="true" />
+                <element signature="e#6570#6581#0" expanded="true" />
+                <element signature="e#6636#6651#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/plp/enquanto/linguagem/Linguagem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="332" column="50" selection-start-line="332" selection-start-column="50" selection-end-line="332" selection-end-column="50" />
+            <state>
+              <caret line="399" column="17" selection-start-line="399" selection-start-column="17" selection-end-line="399" selection-end-column="17" />
               <folding>
                 <element signature="e#1442#1443#0" expanded="true" />
                 <element signature="e#1466#1467#0" expanded="true" />
@@ -108,6 +109,7 @@
       <find>LacoContext</find>
       <find>expRel</find>
       <find>exitOpReal</find>
+      <find>Escolha</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -404,8 +406,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plp/enquanto/linguagem/Linguagem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="332" column="50" selection-start-line="332" selection-start-column="50" selection-end-line="332" selection-end-column="50" />
+        <state>
+          <caret line="399" column="17" selection-start-line="399" selection-start-column="17" selection-end-line="399" selection-end-column="17" />
           <folding>
             <element signature="e#1442#1443#0" expanded="true" />
             <element signature="e#1466#1467#0" expanded="true" />
@@ -429,10 +431,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plp/enquanto/parser/MeuListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="201" column="18" lean-forward="true" selection-start-line="201" selection-start-column="18" selection-end-line="201" selection-end-column="18" />
+        <state relative-caret-position="322">
+          <caret line="247" column="61" selection-start-line="247" selection-start-column="61" selection-end-line="247" selection-end-column="61" />
           <folding>
             <element signature="e#1255#1264#0" expanded="true" />
+            <element signature="e#6570#6581#0" expanded="true" />
+            <element signature="e#6636#6651#0" expanded="true" />
           </folding>
         </state>
       </provider>
