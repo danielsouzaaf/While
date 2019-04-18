@@ -48,8 +48,8 @@ expressao: INT                                      # inteiro
 
 bool: ('verdadeiro'|'falso')                        # booleano
     | expressao '=' expressao                       # opRel
-    | expressao '<' expressao                      # opRel
-    | expressao '>' expressao                      # opRel
+    | expressao '<' expressao                       # opRel
+    | expressao '>' expressao                       # opRel
     | expressao '<=' expressao                      # opRel
     | expressao '>=' expressao                      # opRel
     | expressao '<>' expressao                      # opRel
