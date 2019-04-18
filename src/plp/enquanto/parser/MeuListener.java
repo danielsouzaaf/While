@@ -206,5 +206,17 @@ public class MeuListener extends EnquantoBaseListener {
 		setValue(ctx, new Laco(id, de, ate, passo, comandos));
 	}
 
+	@Override
+	public void exitOuLogico(EnquantoParser.OuLogicoContext ctx) {
+		final Bool esq = (Bool) getValue(ctx.bool(0));
+		final Bool dir = (Bool) getValue(ctx.bool(1));
+		setValue(ctx, new OuLogico(esq, dir));
+	}
 
+	@Override
+	public void exitXorLogico(EnquantoParser.XorLogicoContext ctx) {
+		final Bool esq = (Bool) getValue(ctx.bool(0));
+		final Bool dir = (Bool) getValue(ctx.bool(1));
+		setValue(ctx, new XorLogico(esq, dir));
+	}
 }

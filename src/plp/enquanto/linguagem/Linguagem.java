@@ -411,4 +411,36 @@ public interface Linguagem {
 			return (int) Math.pow((double) esq.getValor(), (double) dir.getValor());
 		}
 	}
+
+	class OuLogico implements Bool {
+		private Bool esq;
+		private Bool dir;
+
+		public OuLogico(Bool esq, Bool dir)
+		{
+			this.esq = esq;
+			this.dir = dir;
+		}
+
+		@Override
+		public boolean getValor() {
+			return this.esq.getValor() || this.dir.getValor();
+		}
+	}
+
+	class XorLogico implements Bool {
+		private Bool esq;
+		private Bool dir;
+
+		public XorLogico(Bool esq, Bool dir)
+		{
+			this.esq = esq;
+			this.dir = dir;
+		}
+
+		@Override
+		public boolean getValor() {
+			return this.esq.getValor() != this.dir.getValor();
+		}
+	}
 }
