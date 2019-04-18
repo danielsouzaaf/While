@@ -2,6 +2,23 @@ grammar Enquanto;
 
 programa : seqComando;     // sequência de comandos
 
+decl: declFuncao ;
+
+
+instr: decl
+       | comando; //subir uma camada para poder trabalhar com declaração de funções.
+
+seqInstr: instr (';' instr)*
+    ;
+
+argsList: (ID (',' ID)*)?;
+paramsList: (expressao (',' expressao)*)?
+    ;
+
+execFuncao: ID '(' paramsList ')';
+
+declFuncao: ID '(' argsList ')' '=' expressao;
+
 seqComando: comando (';' comando)* ;
 
 comando: ID ':=' expressao                          # atribuicao
@@ -13,6 +30,7 @@ comando: ID ':=' expressao                          # atribuicao
        | 'para' ID 'de' expressao 'ate' expressao 'passo' INT 'faca' comando # laco
        | 'escolha' ID ('caso' expressao ':' comando)+'outro : ' comando # escolha
        | '{' seqComando '}'                         # bloco
+       | execFuncao                                 # funcao
        ;
 
 expressao: INT                                      # inteiro
@@ -24,6 +42,7 @@ expressao: INT                                      # inteiro
          | expressao '/' expressao                  # opBin
          | expressao '^' expressao                  # opBin
          | '(' expressao ')'                        # expPar
+         | execFuncao                               # exprFuncao
          ;
 
 bool: ('verdadeiro'|'falso')                        # booleano
