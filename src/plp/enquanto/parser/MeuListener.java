@@ -189,14 +189,14 @@ public class MeuListener extends EnquantoBaseListener {
 	}
 
 	@Override
-	public void exitPara(EnquantoParser.LacoContext ctx) {
-		final Id id = new Id(ctx.ID().getText());
+	public void exitLaco(EnquantoParser.LacoContext ctx) {
+		final String id = (ctx.ID().getText());
 		final Expressao de = (Expressao) getValue(ctx.expressao(0));
 		final Expressao ate = (Expressao) getValue(ctx.expressao(1));
 		final Expressao passo = (Expressao) getValue(ctx.INT());
 
-		final Comando faca = (Comando) getValue(ctx.comando());
+		final List<Comando> comandos = (List<Comando>) getValue(ctx.comando());
 
-		setValue(ctx, new Laco(id, de, ate, passo, faca));
+		setValue(ctx, new Laco(id, de, ate, passo, comandos));
 	}
 }
