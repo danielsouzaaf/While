@@ -43,23 +43,55 @@ public interface Linguagem {
 		}
 	}
 
-	class Se implements Comando {
+	class Se extends SenaoSe implements Comando {
 		private Bool condicao;
-		private Comando entao;
 		private Comando senao;
+		private List<SenaoSe> listaSenaoSe;
 
-		public Se(Bool condicao, Comando entao, Comando senao) {
-			this.condicao = condicao;
-			this.entao = entao;
+		public Se(Bool condicao, Comando entao, List<SenaoSe> listaSenaoSe,Comando senao) {
+			super(condicao, entao);
+
+			this.listaSenaoSe = listaSenaoSe;
 			this.senao = senao;
 		}
 
 		@Override
 		public void execute() {
-			if (condicao.getValor())
-				entao.execute();
-			else
+			boolean executaSenao = true;
+
+			if (condicao.getValor()) {
+				executaSenao = false;
+
+				super.execute();
+			} else {
+				for (SenaoSe senaoSe : listaSenaoSe) {
+					if (senaoSe.condicao.getValor()) {
+						executaSenao = false;
+
+						senaoSe.execute();
+						break;
+					}
+				}
+			}
+
+			if (executaSenao) {
 				senao.execute();
+			}
+		}
+	}
+
+	class SenaoSe implements Comando {
+		private Bool condicao;
+		private Comando entao;
+
+		public SenaoSe(Bool condicao, Comando entao) {
+			this.condicao = condicao;
+			this.entao = entao;
+		}
+
+		@Override
+		public void execute() {
+			entao.execute();
 		}
 	}
 
@@ -289,6 +321,72 @@ public interface Linguagem {
 		@Override
 		public boolean getValor() {
 			return esq.getValor() && dir.getValor();
+		}
+	}
+
+	public class Laco implements Comando {
+		private String id;
+		private Expressao de;
+		private Expressao ate;
+		private Expressao passo;
+		private List<Comando> comandos;
+
+		public Laco(String id, Expressao de, Expressao ate, Expressao passo, List<Comando> comandos) {
+			this.id = id;
+			this.de = de;
+			this.ate = ate;
+			this.passo = passo;
+			this.comandos = comandos;
+		}
+
+		@Override
+		public void execute() {
+			int de = this.de.getValor();
+			int ate = this.ate.getValor();
+			int passo = this.passo.getValor();
+			for (int i = de; i < ate; i += passo ) {
+				for (Comando comando : comandos) {
+					comando.execute();
+				}
+				ambiente.put(this.id,  i);
+			}
+		}
+	}
+
+	class Escolha implements Comando {
+		private String id;
+		private List<Expressao> casos;
+		private List<List<Comando>> comandos;
+
+		public Escolha(String id, List<Expressao> casos, List<List<Comando>> comandos) {
+			this.id = id;
+			this.casos = casos;
+			this.comandos = comandos;
+		}
+
+		@Override
+		public void execute() {
+			int valor = ambiente.get(this.id);
+			int escolhido = 0;
+			boolean executou = false;
+
+
+			for (Expressao caso : this.casos) {
+				if (valor == caso.getValor()) {
+					List<Comando> cmds = this.comandos.get(escolhido);
+					for (Comando cmd : cmds) {
+						cmd.execute();
+					}
+					executou = true;
+					return;
+				}
+				escolhido++;
+			}
+
+			List<Comando> cmds = this.comandos.get(this.comandos.size() - 1);
+			for (Comando cmd : cmds) {
+				cmd.execute();
+			}
 		}
 	}
 }

@@ -39,10 +39,23 @@ public class MeuListener extends EnquantoBaseListener {
 
 	@Override
 	public void exitSe(final EnquantoParser.SeContext ctx) {
-		final Bool condicao = (Bool) getValue(ctx.bool());
+		final Bool condicao = (Bool) getValue((ParseTree) ctx.bool());
 		final Comando entao = (Comando) getValue(ctx.comando(0));
 		final Comando senao = (Comando) getValue(ctx.comando(1));
-		setValue(ctx, new Se(condicao, entao, senao));
+
+		final List<SenaoSe> listaSenaoSe = new ArrayList<SenaoSe>();
+
+
+		if (ctx.bool().size() > 1)
+			for (int i = 1; i < ctx.bool().size(); i++)
+			{
+				final Bool _condicao = (Bool) getValue(ctx.bool(i));
+				final Comando _entao = (Comando) getValue(ctx.comando(i));
+
+				listaSenaoSe.add(new SenaoSe(_condicao, _entao));
+			}
+
+		setValue(ctx, new Se(condicao, entao, listaSenaoSe, senao));
 	}
 
 	@Override
@@ -173,5 +186,17 @@ public class MeuListener extends EnquantoBaseListener {
 			exp = new ExpIgual(esq, dir);
 		}
 		setValue(ctx, exp);
+	}
+
+	@Override
+	public void exitPara(EnquantoParser.LacoContext ctx) {
+		final Id id = new Id(ctx.ID().getText());
+		final Expressao de = (Expressao) getValue(ctx.expressao(0));
+		final Expressao ate = (Expressao) getValue(ctx.expressao(1));
+		final Expressao passo = (Expressao) getValue(ctx.INT());
+
+		final Comando faca = (Comando) getValue(ctx.comando());
+
+		setValue(ctx, new Laco(id, de, ate, passo, faca));
 	}
 }
