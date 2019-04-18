@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="While:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/While_jar</output-path>
+    <root id="root">
+      <element id="archive" name="While.jar">
+        <element id="module-output" name="While" />
+      </element>
+      <element id="library" level="module" name="antlr-runtime-4.7.2.jar" module-name="While" />
+    </root>
+  </artifact>
+</component>

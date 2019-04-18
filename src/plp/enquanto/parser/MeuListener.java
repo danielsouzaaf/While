@@ -1,11 +1,14 @@
 package plp.enquanto.parser;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeProperty;
 
+import org.antlr.v4.runtime.tree.TerminalNode;
 import plp.enquanto.linguagem.Linguagem.*;
 
 public class MeuListener extends EnquantoBaseListener {
@@ -14,6 +17,7 @@ public class MeuListener extends EnquantoBaseListener {
 	private final ParseTreeProperty<Object> values = new ParseTreeProperty<>();
 
 	private Programa programa;
+	private Map<String, Funcao> funcoes = new Hashtable<String, Funcao>();
 
 	public Programa getPrograma() {
 		return programa;
@@ -246,5 +250,33 @@ public class MeuListener extends EnquantoBaseListener {
 			listaComandos.add((List<Comando>) getValue(comctx));
 		}
 		setValue(ctx, new Escolha(id, casos, listaComandos));
+	}
+
+	@Override
+	public void enterDeclFuncao(EnquantoParser.DeclFuncaoContext ctx) {
+
+		final String id = ctx.ID().getText();
+		final Funcao funcao = new Funcao(id);
+
+		funcoes.put(id, funcao);
+	}
+
+	@Override
+	public void exitDeclFuncao(EnquantoParser.DeclFuncaoContext ctx) {
+		final String id = ctx.ID().getText();
+		final Expressao retorno = (Expressao) getValue(ctx.expressao());
+		final Funcao funcao = funcoes.get(id);
+
+		final List<String> args = new ArrayList<String>();
+		final EnquantoParser.ArgsListContext argsCtx = ctx.argsList();
+
+		for (TerminalNode idNode : argsCtx.ID()) {
+			args.add(idNode.getText());
+		}
+
+		funcao.setArgs(args);
+		funcao.setRetorno(retorno);
+
+		setValue(ctx, funcao);
 	}
 }

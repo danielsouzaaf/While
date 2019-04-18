@@ -487,4 +487,61 @@ public interface Linguagem {
 			return this.esq.getValor() != this.dir.getValor();
 		}
 	}
+
+	class Funcao {
+		private String id;
+		private Expressao retorno;
+
+		private List<String> args;
+
+		public Funcao(String id)
+		{
+			this.id = id;
+		}
+
+		public void setArgs(List<String> args) {
+			this.args = args;
+		}
+
+		public void setRetorno(Expressao retorno) {
+			this.retorno = retorno;
+		}
+
+		@Override
+		public String toString()
+		{
+			StringBuilder buffer = new StringBuilder();
+			String argDelim = "";
+
+			for (String arg : args) {
+				buffer.append(argDelim);
+				buffer.append(arg);
+
+				argDelim = ", ";
+			}
+
+			return String.format("%s(%s)", id, buffer.toString());
+		}
+	}
+
+	class ChamadaFuncao implements Expressao {
+		private Funcao funcao;
+		private List<Expressao> params;
+
+		public ChamadaFuncao(Funcao funcao, List<Expressao> params) {
+			this.params = params;
+			this.funcao = funcao;
+		}
+
+		@Override
+		public int getValor() {
+			for (int i = 0; i < funcao.args.size(); i++) {
+				String id = funcao.args.get(i);
+
+				ambiente.put(id, params.get(i).getValor());
+			}
+
+			return funcao.retorno.getValor();
+		}
+	}
 }

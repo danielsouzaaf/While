@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77007aae-eaad-4618-88b2-f0e14571be44" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/While_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plp/enquanto/linguagem/Linguagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plp/enquanto/linguagem/Linguagem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/plp/enquanto/parser/MeuListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/plp/enquanto/parser/MeuListener.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -35,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/plp/enquanto/Principal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+            <state relative-caret-position="12">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,15 +51,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/plp/enquanto/parser/MeuListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="247" column="61" selection-start-line="247" selection-start-column="61" selection-end-line="247" selection-end-column="61" />
+            <state relative-caret-position="117">
+              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
               <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#515#531#0" expanded="true" />
                 <element signature="e#1255#1264#0" expanded="true" />
                 <element signature="e#6570#6581#0" expanded="true" />
                 <element signature="e#6636#6651#0" expanded="true" />
+                <element signature="e#7605#7613#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/plp/enquanto/linguagem/Linguagem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="399" column="17" selection-start-line="399" selection-start-column="17" selection-end-line="399" selection-end-column="17" />
+            <state relative-caret-position="367">
+              <caret line="545" column="5" lean-forward="true" selection-start-line="545" selection-start-column="5" selection-end-line="545" selection-end-column="5" />
               <folding>
                 <element signature="e#1442#1443#0" expanded="true" />
                 <element signature="e#1466#1467#0" expanded="true" />
@@ -83,6 +90,12 @@
                 <element signature="e#7545#7546#0" expanded="true" />
                 <element signature="e#7914#7915#0" expanded="true" />
                 <element signature="e#7972#7973#0" expanded="true" />
+                <element signature="e#8981#8982#0" expanded="true" />
+                <element signature="e#9002#9003#0" expanded="true" />
+                <element signature="e#9046#9047#0" expanded="true" />
+                <element signature="e#9058#9059#0" expanded="true" />
+                <element signature="e#9118#9119#0" expanded="true" />
+                <element signature="e#9130#9131#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,10 +119,12 @@
       <find>Para</find>
       <find>ambiente</find>
       <find>expbin</find>
-      <find>LacoContext</find>
       <find>expRel</find>
       <find>exitOpReal</find>
       <find>Escolha</find>
+      <find>LacoContext</find>
+      <find>Ambiente</find>
+      <find>funcoes</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,16 +136,6 @@
         <option value="$PROJECT_DIR$/src/plp/enquanto/parser/Enquanto.g4" />
         <option value="$PROJECT_DIR$/src/plp/enquanto/linguagem/Linguagem.java" />
         <option value="$PROJECT_DIR$/src/plp/enquanto/parser/MeuListener.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/While.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
       </list>
     </option>
   </component>
@@ -156,58 +161,7 @@
             <path>
               <item name="While" type="b2602c69:ProjectViewProjectNode" />
               <item name="While" type="462c0819:PsiDirectoryNode" />
-              <item name="gen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="While" type="b2602c69:ProjectViewProjectNode" />
-              <item name="While" type="462c0819:PsiDirectoryNode" />
-              <item name="gen" type="462c0819:PsiDirectoryNode" />
-              <item name="plp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="While" type="b2602c69:ProjectViewProjectNode" />
-              <item name="While" type="462c0819:PsiDirectoryNode" />
-              <item name="gen" type="462c0819:PsiDirectoryNode" />
-              <item name="plp" type="462c0819:PsiDirectoryNode" />
-              <item name="enquanto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="While" type="b2602c69:ProjectViewProjectNode" />
-              <item name="While" type="462c0819:PsiDirectoryNode" />
-              <item name="gen" type="462c0819:PsiDirectoryNode" />
-              <item name="plp" type="462c0819:PsiDirectoryNode" />
-              <item name="enquanto" type="462c0819:PsiDirectoryNode" />
-              <item name="parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="While" type="b2602c69:ProjectViewProjectNode" />
-              <item name="While" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="While" type="b2602c69:ProjectViewProjectNode" />
-              <item name="While" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="enquanto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="While" type="b2602c69:ProjectViewProjectNode" />
-              <item name="While" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="enquanto" type="462c0819:PsiDirectoryNode" />
-              <item name="linguagem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="While" type="b2602c69:ProjectViewProjectNode" />
-              <item name="While" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="enquanto" type="462c0819:PsiDirectoryNode" />
-              <item name="parser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="While" type="b2602c69:ProjectViewProjectNode" />
-              <item name="While" type="462c0819:PsiDirectoryNode" />
-              <item name="testes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -223,7 +177,11 @@
     <property name="$PROJECT_DIR$/src/plp/enquanto/parser/Enquanto.g4::/output-dir" value="$PROJECT_DIR$/src" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -236,6 +194,26 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="plp.enquanto.Principal" />
+      <module name="While" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="plp.enquanto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Principal" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -252,9 +230,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="728" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -263,17 +240,18 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3294702" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Tool Output" order="8" weight="0.3294702" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3294702" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3294702" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="ANTLR Preview" order="11" weight="0.3294702" />
       <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="right" id="Coverage" side_tool="true" visible="true" weight="0.32954547" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -283,6 +261,11 @@
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/While$Principal.ic" NAME="Principal Coverage Results" MODIFIED="1555606041961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>plp.enquanto.*</FILTER>
+    </SUITE>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/testes/escolha2.while">
@@ -394,20 +377,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plp/enquanto/Principal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/plp/enquanto/linguagem/Linguagem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="399" column="17" selection-start-line="399" selection-start-column="17" selection-end-line="399" selection-end-column="17" />
+        <state relative-caret-position="367">
+          <caret line="545" column="5" lean-forward="true" selection-start-line="545" selection-start-column="5" selection-end-line="545" selection-end-column="5" />
           <folding>
             <element signature="e#1442#1443#0" expanded="true" />
             <element signature="e#1466#1467#0" expanded="true" />
@@ -425,21 +398,113 @@
             <element signature="e#7545#7546#0" expanded="true" />
             <element signature="e#7914#7915#0" expanded="true" />
             <element signature="e#7972#7973#0" expanded="true" />
+            <element signature="e#8981#8982#0" expanded="true" />
+            <element signature="e#9002#9003#0" expanded="true" />
+            <element signature="e#9046#9047#0" expanded="true" />
+            <element signature="e#9058#9059#0" expanded="true" />
+            <element signature="e#9118#9119#0" expanded="true" />
+            <element signature="e#9130#9131#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/plp/enquanto/parser/MeuListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="247" column="61" selection-start-line="247" selection-start-column="61" selection-end-line="247" selection-end-column="61" />
+        <state relative-caret-position="117">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#515#531#0" expanded="true" />
             <element signature="e#1255#1264#0" expanded="true" />
             <element signature="e#6570#6581#0" expanded="true" />
             <element signature="e#6636#6651#0" expanded="true" />
+            <element signature="e#7605#7613#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/plp/enquanto/Principal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>WhileDaniel</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
