@@ -389,4 +389,26 @@ public interface Linguagem {
 			}
 		}
 	}
+
+	class ExpDiv extends ExpBin {
+		public ExpDiv(Expressao esq, Expressao dir) {
+			super(esq, dir);
+		}
+
+		@Override
+		public int getValor() {
+			return esq.getValor() / dir.getValor();
+		}
+	}
+
+	class ExpPot extends ExpBin {
+		public ExpPot(Expressao esq, Expressao dir) {
+			super(esq, dir);
+		}
+
+		@Override
+		public int getValor() {
+			return (int) Math.pow((double) esq.getValor(), (double) dir.getValor());
+		}
+	}
 }
